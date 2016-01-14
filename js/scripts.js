@@ -3,8 +3,8 @@ $(document).ready(function() {
 
     var iceCreams = [];
 
-    $("input").each(function() {
-      var input = $(this).val();
+    $("input").each(function() {  // high speed way to work with
+      var input = $(this).val();  // any number of form ice cream entries
       iceCreams.push(input);
     });
 
@@ -27,9 +27,15 @@ $(document).ready(function() {
     // var flavor3Input = $("input.flavor3").val();
     // var iceCreams = [flavor1Input, flavor2Input, flavor3Input];
 
-    iceCreams.forEach(function(cream) {
-      $("ul.list").prepend("<li>" + cream + "</li>");
-    });
+
+    for(var i = 0; i < iceCreams.length; i += 1) {
+      $("ul.list").append("<li>" + iceCreams[i] + "</li>");
+    }
+
+        // Using .forEach loop
+        // iceCreams.forEach(function(cream) {
+        //   $("ul.list").append("<li>" + cream + "</li>");
+        // });
 
     event.preventDefault();
   });
